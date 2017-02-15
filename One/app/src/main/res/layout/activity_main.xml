@@ -22,18 +22,14 @@
         android:layout_height="1dp">
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_alignTop="@+id/blow"
-        android:background="#8E8E8E"
-        android:layout_width="match_parent"
-        android:layout_height="1dp">
 
-    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/blow"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true">
+
         <ImageButton
             android:id="@+id/home"
             android:background="#FFFFFF"
