@@ -16,12 +16,18 @@
         android:layout_weight="1" >
     </FrameLayout>
 
+<<<<<<< HEAD
+    </LinearLayout>
+
+
+=======
     <LinearLayout
         android:layout_below="@+id/title"
         android:background="#8E8E8E"
         android:layout_width="match_parent"
         android:layout_height="1dp">
     </LinearLayout>
+>>>>>>> 8c6099194f994f61fd32aad86e17f8210c257e69
     <LinearLayout
         android:id="@+id/blow"
         android:layout_width="match_parent"

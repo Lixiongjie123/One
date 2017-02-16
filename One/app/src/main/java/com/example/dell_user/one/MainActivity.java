@@ -73,7 +73,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
             case R.id.home:
                 home.setImageResource(R.drawable.home_active);
-                moving.setImageResource(R.drawable.movie);
+                reading.setImageResource(R.drawable.reading);
                 musice.setImageResource(R.drawable.music);
                 moving.setImageResource(R.drawable.movie);
                 setTabSelection(0);
