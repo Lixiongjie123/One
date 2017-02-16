@@ -4,45 +4,55 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/title"
+        android:id="@+id/read_title"
         android:layout_width="match_parent"
         android:layout_height="48dp">
         <ImageButton
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:background="#FFFFFFFF"
+            android:src="@drawable/individual_center"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/read_imageButton1" />
 
         <RelativeLayout
-            android:layout_marginTop="16dp"
-            android:id="@+id/message_layout"
+            android:id="@+id/read_layout"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_weight="1"
             android:gravity="center_horizontal">
             <TextView
+                android:textColor="#ADADAD"
+                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="一个阅读"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:id="@+id/read_textView"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
 
-
         <ImageButton
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/search"
+            android:background="#FFFFFF"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/read_imageButton2" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/titleline"
         android:background="#8E8E8E"
         android:layout_width="match_parent"
         android:layout_height="1dp">
 
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reading_recle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
