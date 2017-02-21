@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <litepal>
-    <dbname value="shuju">
+    <dbname value="card_all">
 
     </dbname>
     <version value="1">
 
     </version>
     <list>
+        <mapping class="com.example.dell_user.one.db.Reading"/>
 
     </list>
 </litepal>

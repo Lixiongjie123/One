@@ -5,8 +5,9 @@
 
 
 
+
     <LinearLayout
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/titleline"
         android:background="#8E8E8E"
         android:layout_width="match_parent"
         android:layout_height="1dp">

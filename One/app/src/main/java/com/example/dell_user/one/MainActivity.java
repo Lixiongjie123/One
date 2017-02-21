@@ -1,10 +1,11 @@
 package com.example.dell_user.one;
 
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -16,8 +17,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.dell_user.one.Fragment.MovieFragment;
 import com.example.dell_user.one.Fragment.HomeFragment;
+import com.example.dell_user.one.Fragment.MovieFragment;
 import com.example.dell_user.one.Fragment.MusicFragment;
 import com.example.dell_user.one.Fragment.ReadingFragment;
 import com.example.dell_user.one.IntentActivity.OtherSettingsActivity;
@@ -26,18 +27,24 @@ import com.example.dell_user.one.IntentActivity.UserbackActivity;
 
 import static com.example.dell_user.one.R.id.night;
 
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageButton reading;
     private ImageButton musice;
     private ImageButton home;
     private ImageButton moving;
+    private TextView text;
 
+//    private Handler handler;
     private FragmentManager fragmentManager;
     private HomeFragment homepageFragment;
     private ReadingFragment readFragment;
     private MusicFragment musicFragment;
     private MovieFragment movieFragment;
+    public String id = "";
+    public String getTitles(){
+        return id;
+    }
+
 
     public DrawerLayout mDrawerLayout;
 //    public Button header_back;
@@ -55,7 +62,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         setContentView(R.layout.activity_main);
+//        handler=new Handler(){
+//            @Override
+//            public void handleMessage(Message msg) {
+//                if (msg.what==1)
+//                    setContentView(R.layout.activity_main);
+//            }
+//        };
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(4000);
+//                } catch (InterruptedException e) {
+//                }
+//                handler.sendEmptyMessage(1);
+//            }
+//        }).start();
         init();
+
 
         //Toolbar
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
@@ -90,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             }
         });
+
         fragmentManager=getSupportFragmentManager();
         setTabSelection(0);
 
@@ -235,6 +261,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (movieFragment != null) {
             transaction.hide(movieFragment);
         }
+
+
     }
 
 
@@ -256,7 +284,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return true;
     }
-
 
     //监听返回键
     @Override
@@ -281,4 +308,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onRestoreInstanceState(savedInstanceState);
         theme = savedInstanceState.getInt("theme");
     }
+
 }
