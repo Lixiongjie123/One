@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+
+    <FrameLayout
+        android:id="@+id/QWE1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+        <ImageView
+            android:src="@drawable/bgbgbg"
+            android:layout_width="match_parent"
+            android:layout_height="193dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/header_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/abc_ic_ab_back_mtrl_am_alpha"/>
+            <TextView
+                android:layout_below="@+id/imageButton"
+                android:layout_gravity="bottom"
+                android:textSize="16sp"
+                android:text="未登录"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView" />
+            <ImageButton
+                android:src="@drawable/head"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

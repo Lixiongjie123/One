@@ -1,71 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dell_user.one.MainActivity">
+    tools:openDrawer="start"
+    android:background="?attr/mainBackground">
 
 
 
-    <FrameLayout
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </FrameLayout>
-
-<<<<<<< HEAD
-    </LinearLayout>
-
-
-=======
     <LinearLayout
-        android:layout_below="@+id/title"
-        android:background="#8E8E8E"
         android:layout_width="match_parent"
-        android:layout_height="1dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/title"
+            android:background="#8E8E8E"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/blow"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <ImageButton
+                android:id="@+id/home"
+                android:background="#FFFFFF"
+                android:src="@drawable/home"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/reading"
+                android:background="#FFFFFF"
+                android:src="@mipmap/reading"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/music"
+                android:background="#FFFFFF"
+                android:src="@mipmap/music"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/movie"
+                android:background="#FFFFFF"
+                android:src="@mipmap/movie"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
     </LinearLayout>
->>>>>>> 8c6099194f994f61fd32aad86e17f8210c257e69
-    <LinearLayout
-        android:id="@+id/blow"
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true">
+        android:layout_height="match_parent"
+        android:layout_marginRight="-65dp"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/activity_main_drawer"
+        app:headerLayout="@layout/nav_header_main"/>
+</android.support.v4.widget.DrawerLayout>
 
-        <ImageButton
-            android:id="@+id/home"
-            android:background="#FFFFFF"
-            android:src="@drawable/home"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/reading"
-            android:background="#FFFFFF"
-            android:src="@mipmap/reading"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/music"
-            android:background="#FFFFFF"
-            android:src="@mipmap/music"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/movie"
-            android:background="#FFFFFF"
-            android:src="@mipmap/movie"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-</LinearLayout>
