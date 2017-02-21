@@ -1,36 +1,74 @@
 package com.example.dell_user.one;
 
+import android.app.Fragment;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.dell_user.one.Fragment.MovieFragment;
 import com.example.dell_user.one.Fragment.HomeFragment;
 import com.example.dell_user.one.Fragment.MusicFragment;
 import com.example.dell_user.one.Fragment.ReadingFragment;
+import com.example.dell_user.one.Fragment.samll_fragment.CreatActivity;
+import com.example.dell_user.one.gson.Data2;
+import com.example.dell_user.one.util.HttpUtil;
+import com.example.dell_user.one.util.Utility;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
     private ImageButton reading;
     private ImageButton musice;
     private ImageButton home;
     private ImageButton moving;
+    private TextView text;
 
+//    private Handler handler;
     private FragmentManager fragmentManager;
     private HomeFragment homepageFragment;
     private ReadingFragment readFragment;
     private MusicFragment musicFragment;
     private MovieFragment movieFragment;
+    public String id = "";
+    public String getTitles(){
+        return id;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        handler=new Handler(){
+//            @Override
+//            public void handleMessage(Message msg) {
+//                if (msg.what==1)
+//                    setContentView(R.layout.activity_main);
+//            }
+//        };
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(4000);
+//                } catch (InterruptedException e) {
+//                }
+//                handler.sendEmptyMessage(1);
+//            }
+//        }).start();
         init();
-
-       fragmentManager=getSupportFragmentManager();
+        fragmentManager=getSupportFragmentManager();
         setTabSelection(0);
     }
 
@@ -155,5 +193,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         if (movieFragment != null) {
             transaction.hide(movieFragment);
         }
+
+
     }
+
 }

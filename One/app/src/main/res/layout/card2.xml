@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/bgbgbg"
+                android:id="@+id/card_iamge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:text="dasd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </FrameLayout>
+        <TextView
+            android:textColor="#ADADAD"
+            android:text="asdsa"
+            android:layout_marginTop="8dp"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:lineSpacingExtra="8dp"
+            android:textSize="14sp"
+            android:layout_marginRight="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="asdssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/main2" />
+        <TextView
+            android:layout_marginTop="16dp"
+            android:text="156156"
+            android:gravity="center"
+            android:textColor="#ADADAD"
+            android:textSize="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/dasd"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/diary_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toEndOf="@id/dasd"
+                    android:layout_marginLeft="4dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="10sp"
+                    android:textColor="#ADADAD"
+                    android:text="dasd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageButton
+                    android:background="#FFFFFFFF"
+                    android:src="@drawable/feeds_share"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/imageButton2" />
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_marginRight="8dp"
+                    android:layout_toStartOf="@+id/sadsa"
+                    android:src="@drawable/feeds_laud_default"
+                    android:background="#FFFFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/sadsa"
+                    android:text="·"
+                    android:layout_toStartOf="@+id/imageButton2"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginRight="4dp"
+                    android:layout_toStartOf="@+id/imageButton3"
+                    android:layout_centerVertical="true"
+                    android:textSize="10sp"
+                    android:textColor="#ADADAD"
+                    android:text="dsa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+</LinearLayout>
+</android.support.v7.widget.CardView>

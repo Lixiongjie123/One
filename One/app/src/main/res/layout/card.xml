@@ -2,7 +2,6 @@
 
 
 <android.support.v7.widget.CardView
-    android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
     app:cardCornerRadius="2dp"
     android:layout_height="wrap_content"
@@ -44,12 +43,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <ImageView
+            android:scaleType="centerCrop"
             android:id="@+id/image123"
             android:layout_marginTop="8dp"
             android:layout_below="@+id/title_mid"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="180dp" />
         <TextView
+            android:text="dsadsa"
             android:id="@+id/main"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
@@ -58,57 +59,75 @@
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <TextView
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:id="@+id/time"
-            android:textSize="10sp"
-            android:text="12321"
+        <LinearLayout
             android:layout_below="@+id/main"
             android:layout_marginTop="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:gravity="center_vertical"
-            android:text="12321"
-            android:layout_marginLeft="295dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:id="@+id/people"
-            android:layout_below="@+id/main"
-            android:textSize="10sp"
-            android:layout_width="wrap_content"
-            android:layout_height="15dp" />
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/dasd1"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/diary_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_toEndOf="@id/dasd1"
+                    android:layout_marginLeft="4dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="10sp"
+                    android:textColor="#ADADAD"
+                    android:text="dasd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageButton
+                    android:id="@+id/share"
+                    android:background="#FFFFFFFF"
+                    android:src="@drawable/feeds_share"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                     />
+                <TextView
+                    android:id="@+id/QWE"
+                    android:text="·"
+                    android:layout_toStartOf="@+id/share"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <TextView
-            android:textSize="13sp"
-            android:text="   ·   "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/share"
-            android:layout_toStartOf="@+id/share"
-            android:id="@+id/QWE" />
+                <ImageButton
+                    android:id="@+id/like213"
+                    android:layout_marginRight="8dp"
+                    android:layout_toStartOf="@+id/QWE"
+                    android:src="@drawable/feeds_laud_default"
+                    android:background="#FFFFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginRight="4dp"
+                    android:layout_toStartOf="@+id/like213"
+                    android:layout_centerVertical="true"
+                    android:textSize="10sp"
+                    android:textColor="#ADADAD"
+                    android:text="dsa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-        <ImageButton
-            android:layout_below="@+id/main"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="8dp"
-            android:background="#FFFFFFFF"
-            android:src="@drawable/feeds_share"
-            android:id="@+id/share"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true" />
+            </RelativeLayout>
 
-        <ImageButton
-            android:id="@+id/like213"
-            android:background="#FFFFFF"
-            android:src="@drawable/feeds_laud_default"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/QWE"
-            android:layout_toStartOf="@+id/QWE" />
+
+        </LinearLayout>
+
+
+
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>
