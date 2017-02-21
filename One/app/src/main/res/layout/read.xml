@@ -5,8 +5,11 @@
     android:layout_height="match_parent">
 
 
-
-
+    <android.support.v7.widget.RecyclerView
+        android:visibility="visible"
+        android:id="@+id/reading_recle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:layout_below="@+id/titleline"
@@ -14,13 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp">
     </LinearLayout>
-
-
-    <android.support.v7.widget.RecyclerView
-        android:visibility="visible"
-        android:id="@+id/reading_recle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 
 </LinearLayout>

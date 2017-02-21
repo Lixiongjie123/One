@@ -13,8 +13,10 @@
         android:layout_height="1dp">
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这是music界面"/>
+    <android.support.v7.widget.RecyclerView
+        android:visibility="visible"
+        android:id="@+id/music_recle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

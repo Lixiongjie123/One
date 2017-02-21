@@ -4,28 +4,18 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
-import com.example.dell_user.one.gson.Author;
-import com.example.dell_user.one.gson.Data2;
-import com.example.dell_user.one.gson.reading.HomeLatestArticleList.Asker_list;
 import com.example.dell_user.one.gson.reading.ReadTopPictureList.Data_ReadTopPictureList;
-import com.example.dell_user.one.other.Test;
 import com.example.dell_user.one.util.HttpUtil;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,7 +45,7 @@ public class ReadingFragment extends Fragment {
     private TextView bottom_text;
     FrameLayout frg;
     RecyclerView recyclerView;
-    ContactsAdapter mAdapter;
+    ReadingRecyclerviewAdapter mAdapter;
     private ImageButton imagb;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,7 +64,7 @@ public class ReadingFragment extends Fragment {
         bottom_text= (TextView) view.findViewById(R.id.main);
         frg= (FrameLayout) view.findViewById(R.id.well);
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.reading_recle);
-         mAdapter = new ContactsAdapter(data3s,getActivity());
+         mAdapter = new ReadingRecyclerviewAdapter(data3s,getActivity());
         final LinearLayoutManager layoutManerger = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManerger);
         recyclerView.setAdapter(mAdapter);
@@ -118,6 +108,7 @@ public class ReadingFragment extends Fragment {
                 });
             }
         });
+    }
+
 }
-        }
 

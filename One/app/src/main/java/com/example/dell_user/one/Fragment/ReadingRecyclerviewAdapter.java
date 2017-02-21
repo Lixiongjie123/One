@@ -18,14 +18,13 @@ import java.util.List;
  * Created by DELL-USER on 2017/2/16.
  */
 
-public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
+public class ReadingRecyclerviewAdapter extends RecyclerView.Adapter<ReadingRecyclerviewAdapter.ViewHolder> {
 
     private List<Data3> mContactsList;
     Context context;
 
 
-
-    public ContactsAdapter(List<Data3> contactsList,Context context) {
+    public ReadingRecyclerviewAdapter(List<Data3> contactsList, Context context) {
         this.context=context;
         mContactsList = contactsList;
     }

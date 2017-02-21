@@ -1,20 +1,20 @@
-package com.example.dell_user.one;
+package com.example.dell_user.one.Fragment;
 
-import android.graphics.Movie;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.Date;
+import com.example.dell_user.one.R;
+
 import java.util.List;
 
 /**
  * Created by wanjian on 2017/2/20.
  */
 
-public  class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
+public  class MovieRecyclerviewAdapter extends RecyclerView.Adapter<MovieRecyclerviewAdapter.ViewHolder>{
 
 
     private List<String> mDatas;
@@ -29,13 +29,13 @@ public  class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
     }
 
 
-    public MovieAdapter(List<String> movie){
+    public MovieRecyclerviewAdapter(List<String> movie){
         mDatas=movie;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.movie_recyclerviewitem,parent,false);
+                inflate(R.layout.music_card,parent,false);
         ViewHolder holder=new ViewHolder(view);
         return holder;
     }

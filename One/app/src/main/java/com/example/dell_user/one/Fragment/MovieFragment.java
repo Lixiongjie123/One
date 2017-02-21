@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.dell_user.one.MovieAdapter;
 import com.example.dell_user.one.R;
 
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class MovieFragment extends Fragment {
        //recyclerview
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        MovieAdapter adapter=new MovieAdapter(mDatas);
+        MovieRecyclerviewAdapter adapter=new MovieRecyclerviewAdapter(mDatas);
         recyclerView.setAdapter(adapter);
 
         //swipeRefresh
@@ -75,7 +74,7 @@ public class MovieFragment extends Fragment {
 //                    @Override
 //                    public void run() {
 //                        initDatas();
-//                        MovieAdapter.notifyDataSetChanged();
+//                        MovieRecyclerviewAdapter.notifyDataSetChanged();
 //                        swipeRefresh.setRefreshing(false);
 //                    }
 //                });
