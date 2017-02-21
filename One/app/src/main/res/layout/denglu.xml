@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+android:orientation="vertical" android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:weightSum="1">
 
-    <FrameLayout
-        android:id="@+id/QWE1"
+<FrameLayout
+    android:id="@+id/QWE1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    >
+
+
+    <ImageView
+
+        android:src="@drawable/bgbgbg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        >
+        android:layout_height="193dp" />
 
 
-        <ImageView
 
-            android:src="@drawable/bgbgbg"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+
+            android:layout_below="@+id/imageButton"
+            android:layout_gravity="bottom"
+            android:textSize="16sp"
+            android:text="未登录"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="193dp" />
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" />
 
+        <ImageButton
+            android:src="@drawable/head"
+            android:layout_gravity="center"   
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-
-                android:layout_below="@+id/imageButton"
-                android:layout_gravity="bottom"
-                android:textSize="16sp"
-                android:text="未登录"
-                android:textColor="#FFFFFF"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView" />
-
-            <ImageButton
-                android:src="@drawable/head"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-
-        </RelativeLayout>
-    </FrameLayout>
+    </RelativeLayout>
+</FrameLayout>
 
     <LinearLayout
         android:orientation="vertical"
