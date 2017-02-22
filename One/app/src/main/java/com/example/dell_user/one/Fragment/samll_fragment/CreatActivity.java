@@ -20,7 +20,7 @@ import java.util.TimeZone;
  */
 
 public class CreatActivity  extends Activity{
-TextView textView;
+    TextView textView;
     ImageView imageView;
     private static String mYear;
     private static String mMonth;

@@ -2,6 +2,8 @@ package com.example.dell_user.one.gson.music.TimeMusicBriefInformationList;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 /**
  * Created by wanjian on 2017/2/20.
  */
@@ -14,7 +16,9 @@ public class TimeMusicBriefInformationList {
     private int res;
 
     @SerializedName("data")
-    private Data_TimeMusicBriefInformationList data;
+    private List<Data_TimeMusicBriefInformationList> data ;
+
+
 
     public void setRes(int res){
         this.res = res;
@@ -23,10 +27,10 @@ public class TimeMusicBriefInformationList {
         return this.res;
     }
 
-    public void setData(Data_TimeMusicBriefInformationList data){
+    public void setData(List<Data_TimeMusicBriefInformationList> data){
         this.data = data;
     }
-    public Data_TimeMusicBriefInformationList getData(){
+    public List<Data_TimeMusicBriefInformationList> getData(){
         return this.data;
     }
 
