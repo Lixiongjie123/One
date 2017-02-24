@@ -9,6 +9,15 @@ import com.google.gson.annotations.SerializedName;
 
 //根据id获取图文详细信息
 public class IdGraphicInformation {
+    public IdGraphicInformation(String main,String hp_title,String hp_img_url,String hp_author,String hp_content,String text_authors,String content_bgcolor,Integer praisenum){
+        this.hp_title=hp_title;
+        this.hp_img_url=hp_img_url;
+        this.hp_author=hp_author;
+        this.hp_content=hp_content;
+        this.text_authors=text_authors;
+        this.content_bgcolor=content_bgcolor;
+        this.praisenum=praisenum;
+    }
 
     @SerializedName("hpcontent_id")
     public String hpcontent_id;

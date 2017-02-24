@@ -14,19 +14,13 @@ public class HomeLatestIdLIst implements Serializable{
 
     @SerializedName("data")
     public List<String>data;
+    @SerializedName("res")
+    public String res;
 
-
-//    public Integer getRes() {
-//        return res;
-//    }
-//    public void setRes(Integer res) {
-//        this.res = res;
-//    }
-//
-//    public List<String> getData() { return data;
-//    }
-//    public void setData(List<String> data) {
-//        this.data = data;
-//    }
+    public List<String> getData() { return data;
+    }
+    public void setData(List<String> data) {
+        this.data = data;
+    }
 
 }

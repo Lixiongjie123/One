@@ -1,6 +1,9 @@
 package com.example.dell_user.one.Fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dell_user.one.Fragment.samll_fragment.list.Idsave;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
 import com.example.dell_user.one.gson.Author;
@@ -56,11 +60,13 @@ public class ReadingFragment extends Fragment {
     FrameLayout frg;
     RecyclerView recyclerView;
     ContactsAdapter mAdapter;
-    private ImageButton imagb;
+    private ImageView imageView;
+
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        
         final Calendar c = Calendar.getInstance();
         c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
         mYear = String.valueOf(c.get(Calendar.YEAR));
@@ -70,13 +76,14 @@ public class ReadingFragment extends Fragment {
 
         init();
         View view=inflater.inflate(R.layout.read,container,false);
+        imageView= (ImageView) view.findViewById(R.id.imag12);
         title= (TextView) view.findViewById(R.id.title_large);
         bottom_text= (TextView) view.findViewById(R.id.main);
         frg= (FrameLayout) view.findViewById(R.id.well);
-        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.reading_recle);
-         mAdapter = new ContactsAdapter(data3s,getActivity());
+         recyclerView= (RecyclerView) view.findViewById(R.id.reading_recle);
         final LinearLayoutManager layoutManerger = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManerger);
+        mAdapter = new ContactsAdapter(data3s,getActivity());
         recyclerView.setAdapter(mAdapter);
         return view;
     }
@@ -89,6 +96,13 @@ public class ReadingFragment extends Fragment {
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                getActivity().runOnUiThread(new Runnable() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void run() {
+                        imageView.setVisibility(View.VISIBLE);
+                    }
+                });
             }
 
             @Override
@@ -103,12 +117,16 @@ public class ReadingFragment extends Fragment {
                         final Data_ReadTopPictureList data2= gson.fromJson(reading,Data_ReadTopPictureList.class);
                         textlist.add(data2);
                     }
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        frg.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                         for (Data_ReadTopPictureList data:textlist){
                             Data3 data3=new Data3(data.getId(),data.getTitle(),null,data.getBottom_text(),data.getCover(),null,null,null,null,null);
                             data3s.add(data3);
@@ -119,5 +137,8 @@ public class ReadingFragment extends Fragment {
             }
         });
 }
-        }
+
+
+
+}
 

@@ -17,6 +17,12 @@ import java.util.List;
 
 public class Data_IdMusicInformation {
 
+public Data_IdMusicInformation(String cover,String title,String story_title,String charge_edt){
+    this.cover=cover;
+    this.title=title;
+    this.story_title=story_title;
+    this.charge_edt=charge_edt;
+};
     @SerializedName("id")
     private String id;
 

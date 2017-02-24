@@ -41,37 +41,20 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final Data3  data3 = mContactsList.get(position);
+
        holder.title.setText(data3.getHp_title());
       Glide.with(context).load(data3.getCover()).into(holder.mImageView);
         holder.main.setText(data3.getBottom_text());
 
-        //如果设置了回调，则设置点击事件
-//        if (mOnItemClickListener != null) {
-//            holder.itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    int position  = holder.getLayoutPosition();
-//                    mOnItemClickListener.onItemClick(holder.itemView, contacts.getImageID(), contacts.getName());
-//                }
-//            });
-//        }
 
     }
 
-    //ItemClick的回调接口
-//    public interface OnItemClickListener1 {
-//        void onItemClick(View view, int position, String str);
-//    }
-//    private OnItemClickListener1 mOnItemClickListener;
-//    public void setOnItemClickListener(OnItemClickListener1 onItemClickListener1) {
-//        this.mOnItemClickListener = onItemClickListener1;
-//    }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         View mView;
         ImageView mImageView;
         TextView title;
         TextView main;
-
+        
         public ViewHolder(View itemView) {
         super(itemView);
         mView = itemView;

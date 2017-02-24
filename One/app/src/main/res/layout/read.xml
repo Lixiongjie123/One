@@ -51,21 +51,27 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:visibility="visible"
+        android:visibility="gone"
         android:id="@+id/reading_recle"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <FrameLayout
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/well"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
+            android:id="@+id/imag12"
+            android:visibility="gone"
             android:src="@drawable/opening_friday"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>
+    <ImageView
+        android:src="@drawable/opening_friday"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

@@ -73,6 +73,6 @@ TextView textView;
                 startActivity(intent);
                 CreatActivity.this.finish();
             }
-        },2000);
+        },1000);
     }
 }

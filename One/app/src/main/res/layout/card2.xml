@@ -14,7 +14,7 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:src="@drawable/bgbgbg"
-                android:id="@+id/card_iamge"
+                android:id="@+id/page1_iamge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -22,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
+                    android:id="@+id/page1_title"
                     android:layout_marginLeft="8dp"
                     android:text="dasd"
                     android:layout_width="wrap_content"
@@ -29,6 +30,7 @@
             </RelativeLayout>
         </FrameLayout>
         <TextView
+            android:id="@+id/page1_author"
             android:textColor="#ADADAD"
             android:text="asdsa"
             android:layout_marginTop="8dp"
@@ -45,8 +47,9 @@
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/main2" />
+            android:id="@+id/page1_content" />
         <TextView
+            android:id="@+id/page1_text_authors"
             android:layout_marginTop="16dp"
             android:text="156156"
             android:gravity="center"
@@ -106,6 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/page1_praisenum"
                     android:layout_marginRight="4dp"
                     android:layout_toStartOf="@+id/imageButton3"
                     android:layout_centerVertical="true"

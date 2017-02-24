@@ -29,7 +29,7 @@ public class Essay {
     private String start_video;
 
     @SerializedName("author")
-    private List<Author> author ;
+    public List<Author> authorList ;
 
     @SerializedName("has_audio")
     private boolean has_audio;
@@ -74,10 +74,10 @@ public class Essay {
     }
 
     public void setAuthor(List<Author> author){
-        this.author = author;
+        this.authorList = author;
     }
     public List<Author> getAuthor(){
-        return this.author;
+        return this.authorList;
     }
 
     public void setHas_audio(boolean has_audio){

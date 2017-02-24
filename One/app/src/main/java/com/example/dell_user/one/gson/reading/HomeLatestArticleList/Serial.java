@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Serial {
 
-    @SerializedName("serial_id")
+    @SerializedName("id")
     private String id;
 
     @SerializedName("serial_id")
@@ -46,7 +46,7 @@ public class Serial {
     private boolean has_audio;
 
     @SerializedName("author_list")
-    private List<Author_list> author_list ;
+    private List<Author_list> authorList ;
 
     @SerializedName("serial_list")
     private List<String> serial_list ;
@@ -124,10 +124,10 @@ public class Serial {
     }
 
     public void setAuthor_list(List<Author_list> author_list){
-        this.author_list = author_list;
+        this.authorList = author_list;
     }
     public List<Author_list> getAuthor_list(){
-        return this.author_list;
+        return this.authorList;
     }
 
     public void setString(List<String> serial_list){
