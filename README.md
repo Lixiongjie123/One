@@ -11,7 +11,7 @@
 * 启动页面：<br>
   ![启动页面](http://i1.piimg.com/575659/a6f12fa6174b862d.png)<br>
 * 运行截图：<br>
-  ![运行截图](/one/imags/yunxingjietu.gif)<br>
+  ![运行截图](http://i1.piimg.com/575659/5931ca1d8bc88dd4.gif)<br>
 
 ##使用到的技术：
 * Fragment动态加载
