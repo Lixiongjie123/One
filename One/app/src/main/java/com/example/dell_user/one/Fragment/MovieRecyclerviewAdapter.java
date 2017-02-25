@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.dell_user.one.IntentActivity.MovieIntentActivity;
-import com.example.dell_user.one.IntentActivity.MusicIntentActivity;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
 
@@ -65,7 +64,7 @@ public  class MovieRecyclerviewAdapter extends RecyclerView.Adapter<MovieRecycle
 
     @Override
     public MovieRecyclerviewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_card, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_card2, parent, false);
         final MovieRecyclerviewAdapter.ViewHolder holder = new MovieRecyclerviewAdapter.ViewHolder(view);
         return holder;
     }
