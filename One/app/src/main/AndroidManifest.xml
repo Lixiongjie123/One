@@ -23,8 +23,12 @@
         </activity>
         <activity android:name=".Activity.Fisrt_activity">
 
+        <activity android:name=".IntentActivity.SearchActivity"/>
+        <activity android:name=".IntentActivity.OtherSettingsActivity"/>
+        <activity android:name=".IntentActivity.UserbackActivity"/>
+        <activity android:name=".IntentActivity.MusicIntentActivity"/>
+        <activity android:name=".IntentActivity.MovieIntentActivity"/>
         </activity>
-
     </application>
 
 </manifest>

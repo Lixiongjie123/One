@@ -25,7 +25,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
 
 
-    public ContactsAdapter(List<Data3> contactsList,Context context) {
+
+
+    public ContactsAdapter(List<Data3> contactsList, Context context) {
         this.context=context;
         mContactsList = contactsList;
     }
@@ -40,8 +42,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        final Data3  data3 = mContactsList.get(position);
-
+        final  Data3 data3 = mContactsList.get(position);
        holder.title.setText(data3.getHp_title());
       Glide.with(context).load(data3.getCover()).into(holder.mImageView);
         holder.main.setText(data3.getBottom_text());
@@ -56,9 +57,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         TextView main;
         
         public ViewHolder(View itemView) {
-        super(itemView);
-        mView = itemView;
-        title = (TextView) itemView.findViewById(R.id.title_large);
+            super(itemView);
+            mView = itemView;
+            title = (TextView) itemView.findViewById(R.id.title_large);
             mImageView= (ImageView) itemView.findViewById(R.id.image123);
             main= (TextView) itemView.findViewById(R.id.main);
         }

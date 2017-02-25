@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,14 +17,9 @@ import android.widget.TextView;
 
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
-import com.example.dell_user.one.gson.Author;
-import com.example.dell_user.one.gson.Data2;
-import com.example.dell_user.one.gson.reading.HomeLatestArticleList.Asker_list;
 import com.example.dell_user.one.gson.reading.ReadTopPictureList.Data_ReadTopPictureList;
-import com.example.dell_user.one.other.Test;
 import com.example.dell_user.one.util.HttpUtil;
 import com.google.gson.Gson;
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -85,8 +79,6 @@ public class ReadingFragment extends Fragment {
     }
 
 
-
-
     private void init() {
         String weatherUrl="http://v3.wufazhuce.com:8000/api/reading/carousel";
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
@@ -132,7 +124,8 @@ public class ReadingFragment extends Fragment {
                 });
             }
         });
-}
+    }
+
 
 
 

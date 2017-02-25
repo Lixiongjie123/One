@@ -1,7 +1,11 @@
 package com.example.dell_user.one.util;
 
+
+import android.graphics.Movie;
+
 import com.example.dell_user.one.gson.Data2;
 import com.example.dell_user.one.gson.Reading_gson;
+import com.example.dell_user.one.gson.movie.MovieStoryInformation.Data_MovieStoryInformation;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -42,8 +46,6 @@ public class Utility {
                         readingcontent[i]=jsonArray.getJSONObject(i).toString();
                 return new Gson().fromJson(readingcontent[i], Data2.class);
             }
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -58,5 +60,14 @@ public class Utility {
 //            }
     }
 
+    public static Data_MovieStoryInformation handleMovieRseponse(String response){
+        try {
+            JSONObject jsonObject=new JSONObject(response);
+            return new Gson().fromJson(jsonObject.toString(),Data_MovieStoryInformation.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

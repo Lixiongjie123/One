@@ -4,43 +4,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/read_title"
-        android:layout_width="match_parent"
-        android:layout_height="48dp">
-        <ImageButton
-            android:background="#FFFFFFFF"
-            android:src="@drawable/individual_center"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:id="@+id/read_imageButton1" />
-
-        <RelativeLayout
-            android:id="@+id/read_layout"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal">
-            <TextView
-                android:textColor="#ADADAD"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="一个阅读"
-                android:textSize="20sp"
-                android:id="@+id/read_textView"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-        </RelativeLayout>
-
-        <ImageButton
-            android:src="@drawable/search"
-            android:background="#FFFFFF"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:id="@+id/read_imageButton2" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_below="@+id/titleline"

@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <FrameLayout
+            android:id="@+id/well"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
@@ -71,7 +72,7 @@
                 <ImageView
                     android:id="@+id/dasd"
                     android:layout_marginLeft="8dp"
-                    android:src="@drawable/diary_icon"
+                    android:src="@mipmap/diary_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -86,7 +87,7 @@
 
                 <ImageButton
                     android:background="#FFFFFFFF"
-                    android:src="@drawable/feeds_share"
+                    android:src="@mipmap/feeds_share"
                     android:layout_marginRight="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.dell_user.one.R;
+
 import com.bumptech.glide.Glide;
 import com.example.dell_user.one.Activity.Fisrt_activity;
 import com.example.dell_user.one.Fragment.samll_fragment.list.DATA4;
@@ -71,7 +73,7 @@ public  class PageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             return holder;
         }
         else if (viewType==TYPE_MUSIC){
-            View view1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.music_card, parent, false);
+            View view1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.music_card2, parent, false);
             return new Misic_ViewHolder(view1);
         }
 //        else if (viewType==TYPE_MOVING){

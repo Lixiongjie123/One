@@ -18,7 +18,7 @@ import java.util.TimeZone;
  */
 
 public class CreatActivity  extends Activity{
-TextView textView;
+    TextView textView;
     ImageView imageView;
     private static String mYear;
     private static String mMonth;
@@ -60,8 +60,6 @@ TextView textView;
 
         }
         textView.setText("地球历"+mYear+"年"+mMonth+"月"+mDay+"日");
-
-
 
 
         new Handler().postDelayed(new Runnable() {

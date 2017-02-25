@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="2dp"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_min"
+            android:layout_marginTop="8dp"
+            android:textColor="#ADADAD"
+            android:textSize="12sp"
+            android:text="-电影-"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#000000"
+            android:text="1dp"
+            android:textSize="24sp"
+            android:id="@+id/movie_title_large"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/title_min"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="#000000"
+            android:id="@+id/title_mid"
+            android:textSize="16sp"
+            android:layout_below="@+id/movie_title_large"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="dsadsa"
+            android:id="@+id/movie_main"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:textSize="14sp"
+            android:layout_below="@+id/movie_image123"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_below="@+id/movie_main"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/dasd1"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/diary_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_toEndOf="@id/dasd1"
+                    android:layout_marginLeft="4dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="10sp"
+                    android:textColor="#ADADAD"
+                    android:text="dasd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageButton
+                    android:id="@+id/share"
+                    android:background="#FFFFFFFF"
+                    android:src="@mipmap/feeds_share"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    />
+                <TextView
+                    android:id="@+id/QWE"
+                    android:text="·"
+                    android:layout_toStartOf="@+id/share"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageButton
+                    android:id="@+id/like213"
+                    android:layout_marginRight="8dp"
+                    android:layout_toStartOf="@+id/QWE"
+                    android:src="@drawable/feeds_laud_default"
+                    android:background="#FFFFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_marginRight="4dp"
+                    android:layout_toStartOf="@+id/like213"
+                    android:layout_centerVertical="true"
+                    android:textSize="10sp"
+                    android:textColor="#ADADAD"
+                    android:text="dsa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/movie_image123"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_below="@+id/title_mid"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="11dp" />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
