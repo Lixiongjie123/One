@@ -1,6 +1,7 @@
 package com.example.dell_user.one.Fragment.samll_fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.dell_user.one.Activity.Fisrt_activity;
 import com.example.dell_user.one.Fragment.samll_fragment.list.DATA4;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.gson.music.IdMusicInformation.Data_IdMusicInformation;
@@ -173,6 +175,13 @@ public  class PageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         TextView praisenum;
         public Mian_ViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent =new Intent(context, Fisrt_activity.class);
+                    context.startActivity(intent);
+                }
+            });
             bgimage= (ImageView) itemView.findViewById(R.id.page1_iamge);
             hp_title= (TextView) itemView.findViewById(R.id.page1_title);
             hp_author= (TextView) itemView.findViewById(R.id.page1_author);

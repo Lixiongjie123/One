@@ -16,7 +16,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.dell_user.one.Fragment.samll_fragment.list.Idsave;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
 import com.example.dell_user.one.gson.Author;
@@ -26,10 +25,7 @@ import com.example.dell_user.one.gson.reading.ReadTopPictureList.Data_ReadTopPic
 import com.example.dell_user.one.other.Test;
 import com.example.dell_user.one.util.HttpUtil;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;

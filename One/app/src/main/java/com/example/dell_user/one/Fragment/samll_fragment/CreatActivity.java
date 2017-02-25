@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.dell_user.one.MainActivity;
+import com.example.dell_user.one.Activity.MainActivity;
 import com.example.dell_user.one.R;
 
-import java.sql.Time;
 import java.util.Calendar;
 import java.util.TimeZone;
 

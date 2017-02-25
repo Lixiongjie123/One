@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.dell_user.one.Fragment.samll_fragment.list.DATA4;
-import com.example.dell_user.one.Fragment.samll_fragment.list.Idsave;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.gson.home.HomeLatestIdLIst.HomeLatestIdLIst;
 import com.example.dell_user.one.gson.home.IdGraphicInformation.IdGraphicInformation;

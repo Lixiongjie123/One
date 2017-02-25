@@ -1,4 +1,4 @@
-package com.example.dell_user.one;
+package com.example.dell_user.one.Activity;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import com.example.dell_user.one.Fragment.HomeFragment;
 import com.example.dell_user.one.Fragment.MusicFragment;
 import com.example.dell_user.one.Fragment.ReadingFragment;
 import com.example.dell_user.one.Fragment.samll_fragment.CreatActivity;
+import com.example.dell_user.one.R;
 import com.example.dell_user.one.gson.Data2;
 import com.example.dell_user.one.util.HttpUtil;
 import com.example.dell_user.one.util.Utility;
