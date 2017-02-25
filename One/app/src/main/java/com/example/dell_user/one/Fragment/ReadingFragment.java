@@ -1,6 +1,9 @@
 package com.example.dell_user.one.Fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.dell_user.one.R;
@@ -45,28 +49,31 @@ public class ReadingFragment extends Fragment {
     private TextView bottom_text;
     FrameLayout frg;
     RecyclerView recyclerView;
-    ReadingRecyclerviewAdapter mAdapter;
-    private ImageButton imagb;
+    ContactsAdapter mAdapter;
+    private ImageView imageView;
+
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        View view=inflater.inflate(R.layout.read,container,false);
-//        final Calendar c = Calendar.getInstance();
-//        c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
-//        mYear = String.valueOf(c.get(Calendar.YEAR));
-//        mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);
-//        mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+        final Calendar c = Calendar.getInstance();
+        c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+        mYear = String.valueOf(c.get(Calendar.YEAR));
+        mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);
+        mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+
 
         init();
-
-       //实例化和找到控件
+        View view=inflater.inflate(R.layout.read,container,false);
+        imageView= (ImageView) view.findViewById(R.id.imag12);
         title= (TextView) view.findViewById(R.id.title_large);
         bottom_text= (TextView) view.findViewById(R.id.main);
         frg= (FrameLayout) view.findViewById(R.id.well);
-        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.reading_recle);
-         mAdapter = new ReadingRecyclerviewAdapter(data3s,getActivity());
+         recyclerView= (RecyclerView) view.findViewById(R.id.reading_recle);
         final LinearLayoutManager layoutManerger = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManerger);
+        mAdapter = new ContactsAdapter(data3s,getActivity());
         recyclerView.setAdapter(mAdapter);
         return view;
     }
@@ -77,6 +84,13 @@ public class ReadingFragment extends Fragment {
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+                getActivity().runOnUiThread(new Runnable() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void run() {
+                        imageView.setVisibility(View.VISIBLE);
+                    }
+                });
             }
 
             @Override
@@ -91,12 +105,16 @@ public class ReadingFragment extends Fragment {
                         final Data_ReadTopPictureList data2= gson.fromJson(reading,Data_ReadTopPictureList.class);
                         textlist.add(data2);
                     }
+
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        frg.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                         for (Data_ReadTopPictureList data:textlist){
                             Data3 data3=new Data3(data.getId(),data.getTitle(),null,data.getBottom_text(),data.getCover(),null,null,null,null,null);
                             data3s.add(data3);
@@ -107,6 +125,9 @@ public class ReadingFragment extends Fragment {
             }
         });
     }
+
+
+
 
 }
 
