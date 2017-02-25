@@ -24,10 +24,7 @@
         <activity android:name=".IntentActivity.MusicIntentActivity"/>
         <activity android:name=".IntentActivity.MovieIntentActivity"/>
         <activity android:name=".MainActivity">
-
         </activity>
-
-
     </application>
 
 </manifest>

@@ -55,12 +55,12 @@ public class MusicFragment extends Fragment {
     private static String mWay;
 
     private CardView cardView;
-    
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         View view=inflater.inflate(R.layout.music,container,false);
-       
-        
+
+
 
         init();
         title= (TextView) view.findViewById(R.id.music_title_large);

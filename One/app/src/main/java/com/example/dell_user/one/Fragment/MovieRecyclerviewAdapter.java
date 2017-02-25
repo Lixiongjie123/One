@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.dell_user.one.IntentActivity.MovieIntentActivity;
+import com.example.dell_user.one.IntentActivity.MusicIntentActivity;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
 

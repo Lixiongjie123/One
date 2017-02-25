@@ -25,6 +25,8 @@ public class ReadingRecyclerviewAdapter extends RecyclerView.Adapter<ReadingRecy
 
 
 
+
+
     public ReadingRecyclerviewAdapter(List<Data3> contactsList, Context context) {
         this.context=context;
         mContactsList = contactsList;
