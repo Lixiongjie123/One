@@ -21,7 +21,8 @@
         <activity android:name=".IntentActivity.SearchActivity"/>
         <activity android:name=".IntentActivity.OtherSettingsActivity"/>
         <activity android:name=".IntentActivity.UserbackActivity"/>
-
+        <activity android:name=".IntentActivity.MusicIntentActivity"/>
+        <activity android:name=".IntentActivity.MovieIntentActivity"/>
         <activity android:name=".MainActivity">
 
         </activity>

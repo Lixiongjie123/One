@@ -10,132 +10,135 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" >
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <TextView
-            android:id="@+id/title_min"
-            android:layout_marginTop="8dp"
-            android:textColor="#ADADAD"
             android:textSize="12sp"
-            android:text="-音乐-"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:gravity="center"
+            android:text="- 音乐 -"
+            android:textColor="#ADADAD"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_min" />
 
         <TextView
-            android:textColor="#000000"
-            android:text="1dp"
-            android:textSize="24sp"
             android:id="@+id/music_title_large"
-            android:layout_marginTop="24dp"
-            android:layout_below="@+id/title_min"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="5465"
             android:textColor="#000000"
-            android:id="@+id/title_mid"
-            android:textSize="16sp"
-            android:layout_below="@+id/music_title_large"
+            android:layout_marginTop="16dp"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="24dp"
+            android:text="dsadsdasd"
+            android:textColor="#000000"
+            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:scaleType="centerCrop"
-            android:id="@+id/music_image123"
-            android:layout_marginTop="8dp"
-            android:layout_below="@+id/title_mid"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            app:civ_border_width="90dp"
-            app:civ_border_color="#DC143C"/>
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#FFFFFFFF"
+                    android:src="@mipmap/feeds_music"
+                    android:layout_width="216dp"
+                    android:layout_height="216dp"
+                    android:id="@+id/music_image123" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:src="@mipmap/play"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/imageButton4" />
+            </RelativeLayout>
+
+        </FrameLayout>
 
         <TextView
-            android:text="dsadsa"
-            android:id="@+id/music_main"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:textSize="14sp"
-            android:layout_below="@+id/music_image123"
-            android:layout_marginTop="8dp"
+            android:text="21321322"
+            android:layout_marginLeft="16dp"
+            android:textColor="#ADADAD"
+            android:textSize="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/music_main"
+            android:text="65416515656511111111111111111111111111111111111111"
+            android:lineSpacingExtra="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
         <LinearLayout
-            android:layout_below="@+id/music_main"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <ImageView
-                    android:id="@+id/dasd1"
-                    android:layout_marginLeft="8dp"
-                    android:src="@drawable/diary_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+
                 <TextView
-                    android:id="@+id/time"
-                    android:layout_toEndOf="@id/dasd1"
-                    android:layout_marginLeft="4dp"
                     android:layout_centerVertical="true"
-                    android:textSize="10sp"
+                    android:text="156556"
                     android:textColor="#ADADAD"
-                    android:text="dasd"
+                    android:textSize="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <ImageButton
-                    android:id="@+id/share"
-                    android:background="#FFFFFFFF"
+                    android:id="@+id/music_share"
                     android:src="@mipmap/feeds_share"
-                    android:layout_marginRight="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
+                    android:background="#FFFF"
                     android:layout_alignParentEnd="true"
-                    />
-                <TextView
-                    android:id="@+id/QWE"
-                    android:text="·"
-                    android:layout_toStartOf="@+id/share"
-                    android:layout_marginRight="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <ImageButton
-                    android:id="@+id/like213"
-                    android:layout_marginRight="8dp"
-                    android:layout_toStartOf="@+id/QWE"
-                    android:src="@drawable/feeds_laud_default"
-                    android:background="#FFFFFFFF"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
-                    android:layout_marginRight="4dp"
-                    android:layout_toStartOf="@+id/like213"
-                    android:layout_centerVertical="true"
-                    android:textSize="10sp"
+                    android:id="@+id/dasdq"
                     android:textColor="#ADADAD"
-                    android:text="dsa"
+                    android:text="   ·   "
+                    android:layout_toStartOf="@+id/music_share"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-
+                <ImageButton
+                    android:id="@+id/music_like"
+                    android:src="@drawable/feeds_laud_default"
+                    android:background="#FFFF"
+                    android:layout_toStartOf="@+id/dasdq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="10dp"
+                    android:text="sad"
+                    android:textColor="#ADADAD"
+                    android:layout_marginRight="8dp"
+                    android:layout_toStartOf="@+id/music_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
-
 
         </LinearLayout>
 
+    </LinearLayout>
 
-
-
-    </RelativeLayout>
 </android.support.v7.widget.CardView>

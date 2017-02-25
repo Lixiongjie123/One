@@ -1,22 +1,20 @@
-package com.example.dell_user.one.Fragment;
+package com.example.dell_user.one.IntentActivity;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.dell_user.one.Fragment.MovieRecyclerviewAdapter;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
 import com.example.dell_user.one.gson.movie.MovieInformationList.Data_MovieInformationList;
-import com.example.dell_user.one.gson.movie.MovieStoryInformation.Data_MovieStoryInformation;
-import com.example.dell_user.one.gson.music.TimeMusicBriefInformationList.Data_TimeMusicBriefInformationList;
 import com.example.dell_user.one.util.HttpUtil;
 import com.google.gson.Gson;
 
@@ -32,80 +30,52 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-import static android.R.id.text1;
-
 /**
- * Created by wanjian on 2017/2/14.
+ * Created by wanjian on 2017/2/22.
  */
 
-public class MovieFragment extends Fragment {
+public class MovieIntentActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView title;
     private TextView bottom_text;
+    private ImageButton imageButton;
+
+    private List<Data3> contactsList = new ArrayList<>();
+
     private List<Data3> data3s = new ArrayList<>();
     private List<Data_MovieInformationList> textlist=new ArrayList<>();
-    MovieRecyclerviewAdapter mAdapter;
+    MovieIntentRecyclerviewAdapter mAdapter;
     FrameLayout frg;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.movie_intent);
 
+        imageButton =(ImageButton) findViewById(R.id.music_imageButton1);
+        imageButton.setOnClickListener(this);
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState){
-        View view=inflater.inflate(R.layout.movie,container,false);
         init();
-        title= (TextView) view.findViewById(R.id.movie_title_large);
-        bottom_text= (TextView) view.findViewById(R.id.movie_main);
-        frg= (FrameLayout) view.findViewById(R.id.well);
-        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.movie_recle);
-        mAdapter = new MovieRecyclerviewAdapter(data3s,getActivity());
-        LinearLayoutManager layoutManerger = new LinearLayoutManager(getActivity());
+
+        title = (TextView)findViewById(R.id.movie_infor_title);
+        bottom_text= (TextView) findViewById(R.id.movie_infor_content);
+        frg= (FrameLayout) findViewById(R.id.movie_infor_well);
+        RecyclerView recyclerView= (RecyclerView) findViewById(R.id.movie_intent_recle);
+        mAdapter = new MovieIntentRecyclerviewAdapter(contactsList);
+        LinearLayoutManager layoutManerger = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManerger);
         recyclerView.setAdapter(mAdapter);
-        return view;
-
-        //swipeRefresh
-//        swipeRefresh=(SwipeRefreshLayout)view.findViewById(R.id.swipe_refresh);
-////        swipeRefresh.setColorSchemeColors(R.color.colorPrimary);
-//        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//               refreshDatas();
-//            }
-//
-//
-//        });
+        Log.d("出来", "ok ");
     }
 
-//    private void initDatas() {
-//
-//        mDatas = new ArrayList<String>();
-//        for (int i = 'A'; i < 'z'; i++)
-//        {
-//            mDatas.add("" + (char) i);
-//        }
-//    }
 
-//    private void refreshDatas() {
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                getActivity().runOnUiThread(new Runnable(){
-//
-//                    @Override
-//                    public void run() {
-//                        initDatas();
-//                        MovieRecyclerviewAdapter.notifyDataSetChanged();
-//                        swipeRefresh.setRefreshing(false);
-//                    }
-//                });
-//            }
-//        }).start();
-//    }
+
+    //返回fragment
+    @Override
+    public void onClick(View view) {
+        onBackPressed();
+    }
+
 
     private void init() {
         String weatherUrl="http://v3.wufazhuce.com:8000/api/movie/list/145";
@@ -116,7 +86,6 @@ public class MovieFragment extends Fragment {
             @Override
             public void onResponse(Call call, Response response) throws IOException {;
                 final String responsetext=response.body().string();
-
                 try {
                     JSONObject jsonObject=new JSONObject(responsetext);
                     final JSONArray jsonArray=jsonObject.getJSONArray("data");
@@ -129,18 +98,21 @@ public class MovieFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                getActivity().runOnUiThread(new Runnable() {
+                runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         for (Data_MovieInformationList data:textlist){
                             Data3 data3=new Data3(data.getId(),data.getTitle(),null,data.getScore(),data.getCover(),null,null,null,null,null);
-                            Log.d("chuxian", data.getId());
                             data3s.add(data3);
+                            Log.d("出：", data.getId());
                             mAdapter.notifyDataSetChanged();
+
                         }
                     }
                 });
             }
         });
     }
+
+
 }

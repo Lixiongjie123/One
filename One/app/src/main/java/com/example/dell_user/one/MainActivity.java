@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 musice.setImageResource(R.drawable.music);
                 reading.setImageResource(R.drawable.reading);
                 home.setImageResource(R.drawable.home);
-                textView_movie.setText("一个电影");
+                textView_movie.setText("一个影视");
                 setTabSelection(3);
                 break;
             default:

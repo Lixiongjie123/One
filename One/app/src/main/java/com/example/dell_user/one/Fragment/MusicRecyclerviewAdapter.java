@@ -27,7 +27,9 @@ public class MusicRecyclerviewAdapter extends RecyclerView.Adapter<MusicRecycler
     Context context;
 
 
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
+
         View mView;
         ImageView mImageView;
         TextView title;
@@ -36,6 +38,7 @@ public class MusicRecyclerviewAdapter extends RecyclerView.Adapter<MusicRecycler
 
         public ViewHolder(View itemView) {
             super(itemView);
+
             mView = itemView;
             title = (TextView) itemView.findViewById(R.id.music_title_large);
             mImageView= (ImageView) itemView.findViewById(R.id.music_image123);

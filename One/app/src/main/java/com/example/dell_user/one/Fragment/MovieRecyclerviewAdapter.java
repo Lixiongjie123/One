@@ -1,6 +1,7 @@
 package com.example.dell_user.one.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.dell_user.one.IntentActivity.MovieIntentActivity;
+import com.example.dell_user.one.IntentActivity.MusicIntentActivity;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
 
@@ -24,7 +27,9 @@ public  class MovieRecyclerviewAdapter extends RecyclerView.Adapter<MovieRecycle
     Context context;
 
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         View mView;
         ImageView mImageView;
@@ -38,6 +43,17 @@ public  class MovieRecyclerviewAdapter extends RecyclerView.Adapter<MovieRecycle
             title = (TextView) itemView.findViewById(R.id.movie_title_large);
             mImageView= (ImageView) itemView.findViewById(R.id.movie_image123);
             main= (TextView) itemView.findViewById(R.id.movie_main);
+
+            //点击事件
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context,MovieIntentActivity.class);
+                    context.startActivity(intent);
+                }
+            });
+
         }
     }
 
@@ -46,6 +62,7 @@ public  class MovieRecyclerviewAdapter extends RecyclerView.Adapter<MovieRecycle
         this.context=context;
         mContactsList = contactsList;
     }
+
     @Override
     public MovieRecyclerviewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_card, parent, false);

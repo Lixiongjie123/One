@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <LinearLayout
         android:id="@+id/music_title"
         android:layout_width="match_parent"
         android:layout_height="48dp">
         <ImageButton
             android:background="#FFFFFFFF"
-            android:src="@mipmap/ali_feedback_icon_back_white"
+            android:src="@mipmap/aliwx_common_back_btn_normal"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:id="@+id/music_imageButton1" />
@@ -28,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="一个阅读"
+                android:text="一个影视"
                 android:textSize="20sp"
                 android:id="@+id/music_textView"
                 android:layout_centerVertical="true"
@@ -36,27 +37,23 @@
         </RelativeLayout>
 
         <ImageButton
-            android:src="@mipmap/feeds_share"
+            android:src="@drawable/feeds_share"
             android:background="#FFFFFF"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:id="@+id/music_imageButton2" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_below="@+id/titleline"
-        android:background="#8E8E8E"
-        android:layout_width="match_parent"
-        android:layout_height="1dp">
 
-    </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-    </FrameLayout>
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/movie_intent_recle"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1">
+
+
+   </android.support.v7.widget.RecyclerView>
 
     <LinearLayout
         android:orientation="horizontal"

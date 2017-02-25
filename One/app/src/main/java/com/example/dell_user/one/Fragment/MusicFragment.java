@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.dell_user.one.Fragment.samll_fragment.CreatActivity;
+import com.example.dell_user.one.IntentActivity.MusicIntentActivity;
 import com.example.dell_user.one.R;
 import com.example.dell_user.one.db.Data3;
 import com.example.dell_user.one.gson.music.TimeMusicBriefInformationList.Data_TimeMusicBriefInformationList;
@@ -44,7 +46,7 @@ public class MusicFragment extends Fragment {
     private TextView bottom_text;
     private List<Data3> data3s = new ArrayList<>();
     private List<Data_TimeMusicBriefInformationList> textlist=new ArrayList<>();
-    ReadingRecyclerviewAdapter mAdapter;
+    MusicRecyclerviewAdapter mAdapter;
     FrameLayout frg;
 
     private static String mYear;
@@ -65,24 +67,30 @@ public class MusicFragment extends Fragment {
         bottom_text= (TextView) view.findViewById(R.id.music_main);
         frg= (FrameLayout) view.findViewById(R.id.well);
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.music_recle);
-        mAdapter = new ReadingRecyclerviewAdapter(data3s,getActivity());
+        mAdapter = new MusicRecyclerviewAdapter(data3s,getActivity());
         LinearLayoutManager layoutManerger = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManerger);
         recyclerView.setAdapter(mAdapter);
 
+//        title.setOnClickListener(this);
+
+
         return view;
+
 
     }
 
-
+//    @Override
+//    public void onClick(View view) {
+//        Intent intent=new Intent(getActivity(), MusicIntentActivity.class);
+//        startActivity(intent);
+//    }
 
     private void init() {
 
         Calendar c =Calendar.getInstance();
         mYear = String.valueOf(c.get(Calendar.YEAR)); // 获取当前年份
         mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);// 获取当前月份
-        mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));// 获取当前月份的日期号码
-        mWay = String.valueOf(c.get(Calendar.DAY_OF_WEEK));
 
         String weatherUrl="http://v3.wufazhuce.com:8000/api/music/bymonth/"+mYear+"-"+mMonth;
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
@@ -110,6 +118,7 @@ public class MusicFragment extends Fragment {
                     public void run() {
                         for (Data_TimeMusicBriefInformationList data:textlist){
                             Data3 data3=new Data3(data.getId(),data.getStory_title(),null,data.getTitle(),data.getCover(),null,null,null,null,null);
+                            Log.d("出现：",data.getId());
                             data3s.add(data3);
                             mAdapter.notifyDataSetChanged();
                         }
@@ -118,6 +127,5 @@ public class MusicFragment extends Fragment {
             }
         });
     }
-
 
 }
